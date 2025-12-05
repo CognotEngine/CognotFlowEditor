@@ -1,0 +1,688 @@
+.cognot-property-panel {
+  width: 300px;
+  height: 100%;
+  background-color: #1a1a1a;
+  border-left: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  overflow: hidden;
+}
+
+.cognot-property-panel-header {
+  padding: 12px 16px;
+  background-color: #2a2a2a;
+  border-bottom: 1px solid #333;
+}
+
+.cognot-property-panel-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.cognot-property-panel-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+.cognot-property-panel-empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #888;
+  font-style: italic;
+}
+
+.cognot-property-section {
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #333;
+}
+
+.cognot-property-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.cognot-property-section h4 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ccc;
+}
+
+.cognot-property-section h5 {
+  margin: 8px 0 8px 0;
+  font-size: 12px;
+  font-weight: 500;
+  color: #aaa;
+}
+
+.cognot-property-item {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cognot-property-label-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+
+.cognot-property-description {
+  font-size: 11px;
+  color: #666;
+  font-style: italic;
+  margin-left: 6px;
+}
+
+.cognot-property-required {
+  color: #f44336;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.cognot-property-readonly-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cognot-property-copy-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 2px;
+  border-radius: 3px;
+  transition: background-color 0.2s;
+}
+
+.cognot-property-copy-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.cognot-property-node-info {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  padding: 12px;
+  margin-top: 8px;
+}
+
+.cognot-property-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cognot-property-item label {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.cognot-property-item span {
+  font-size: 12px;
+  color: #ccc;
+  word-break: break-all;
+}
+
+.cognot-property-collapsible-group {
+  margin-bottom: 16px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #222;
+}
+
+.cognot-property-collapsible-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background-color: #2a2a2a;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s;
+}
+
+.cognot-property-collapsible-header:hover {
+  background-color: #333;
+}
+
+.cognot-property-collapsible-header h4 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: #ccc;
+}
+
+.cognot-property-collapsible-icon {
+  font-size: 10px;
+  color: #888;
+  transition: transform 0.2s ease;
+}
+
+.cognot-property-collapsible-icon.expanded {
+  transform: rotate(180deg);
+}
+
+.cognot-property-collapsible-content {
+  padding: 12px 14px;
+  background-color: #222;
+}
+
+.cognot-property-item input[type="text"],
+.cognot-property-item input[type="number"],
+.cognot-property-item select {
+  padding: 6px 8px;
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 12px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.cognot-property-item input[type="text"]:focus,
+.cognot-property-item input[type="number"]:focus,
+.cognot-property-item select:focus {
+  border-color: #2196F3;
+}
+
+.comfy-property-item select {
+  cursor: pointer;
+}
+
+.cognot-property-item input[type="checkbox"] {
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.cognot-property-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.cognot-property-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.cognot-property-switch label {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.cognot-property-switch label:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+.cognot-property-switch input:checked + label {
+  background-color: #2196F3;
+}
+
+.cognot-property-switch input:focus + label {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+.cognot-property-switch input:checked + label:before {
+  transform: translateX(26px);
+}
+
+.cognot-property-textarea-container {
+  position: relative;
+  width: 100%;
+}
+
+.cognot-property-textarea-container textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 80px;
+  box-sizing: border-box;
+}
+
+.cognot-property-textarea-container textarea:focus {
+  outline: none;
+  border-color: #1976d2;
+  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2);
+}
+
+.cognot-property-textarea-counter {
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  font-size: 12px;
+  color: #999;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0 4px;
+}
+
+.cognot-property-searchable-dropdown {
+  position: relative;
+  width: 100%;
+}
+
+.cognot-property-dropdown-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.cognot-property-dropdown-arrow {
+  font-size: 12px;
+  color: #666;
+  transition: transform 0.2s;
+}
+
+.cognot-property-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  max-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cognot-property-dropdown-search {
+  padding: 8px 12px;
+  border: none;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  outline: none;
+}
+
+.cognot-property-dropdown-options {
+  overflow-y: auto;
+  max-height: 250px;
+}
+
+.cognot-property-dropdown-option {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.cognot-property-dropdown-option:hover {
+  background-color: #f5f5f5;
+}
+
+.cognot-property-dropdown-option.selected {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.cognot-property-dropdown-no-results {
+  padding: 12px;
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+}
+
+.cognot-property-number-control {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cognot-property-slider input[type="range"] {
+  width: 100%;
+  height: 4px;
+  background-color: #333;
+  border-radius: 2px;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.cognot-property-slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background-color: #2196F3;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.cognot-property-slider input[type="range"]::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  background-color: #2196F3;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+.cognot-property-ports {
+  margin-top: 8px;
+}
+
+.cognot-property-port-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+  font-size: 12px;
+}
+
+.cognot-property-port-name {
+  color: #ccc;
+}
+
+.cognot-property-port-type {
+  color: #888;
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.cognot-property-panel-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cognot-property-panel-content::-webkit-scrollbar-track {
+  background-color: #2a2a2a;
+}
+
+.cognot-property-panel-content::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 3px;
+}
+
+.cognot-property-panel-content::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.cognot-property-color-picker {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.cognot-property-color-preview {
+  width: 40px;
+  height: 32px;
+  border-radius: 4px;
+  border: 1px solid #444;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.cognot-property-color-preview:hover {
+  border-color: #2196F3;
+}
+
+.cognot-property-color-input {
+  flex: 1;
+  padding: 6px 8px;
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 12px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.cognot-property-color-input:focus {
+  border-color: #2196F3;
+}
+
+.cognot-property-image-upload {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cognot-property-image-preview {
+  width: 100%;
+  height: 150px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2a2a2a;
+  position: relative;
+  overflow: hidden;
+}
+
+.cognot-property-image-preview img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.cognot-property-image-placeholder {
+  color: #888;
+  font-size: 12px;
+}
+
+.cognot-property-image-upload-btn {
+  padding: 8px 12px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cognot-property-image-upload-btn:hover {
+  background-color: #1976D2;
+}
+
+.cognot-property-image-remove-btn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  padding: 2px 6px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 2px;
+  font-size: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cognot-property-image-remove-btn:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.cognot-property-file-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cognot-property-file-input {
+  display: none;
+}
+
+.cognot-property-file-btn {
+  padding: 8px 12px;
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  text-align: center;
+}
+
+.cognot-property-file-btn:hover {
+  border-color: #2196F3;
+}
+
+.cognot-property-file-name {
+  font-size: 11px;
+  color: #888;
+  word-break: break-all;
+  padding: 4px;
+  background-color: #2a2a2a;
+  border-radius: 4px;
+}
+
+.cognot-property-multi-select {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cognot-property-multi-select-input {
+  padding: 6px 8px;
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 12px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.cognot-property-multi-select-input:focus {
+  border-color: #2196F3;
+}
+
+.cognot-property-multi-select-options {
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background-color: #2a2a2a;
+}
+
+.cognot-property-multi-select-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 12px;
+}
+
+.cognot-property-multi-select-option:hover {
+  background-color: #333;
+}
+
+.cognot-property-multi-select-option.selected {
+  background-color: #2196F3;
+  color: white;
+}
+
+.cognot-property-vector-input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cognot-property-vector-dimensions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.cognot-property-vector-dimensions label {
+  font-size: 12px;
+  color: #aaa;
+  min-width: 60px;
+}
+
+.cognot-property-vector-dimensions select {
+  flex: 1;
+  padding: 6px 8px;
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 12px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.cognot-property-vector-dimensions select:focus {
+  border-color: #2196F3;
+}
+
+.cognot-property-vector-values {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cognot-property-vector-value {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.cognot-property-vector-value index {
+  font-size: 11px;
+  color: #888;
+  width: 20px;
+  text-align: center;
+}
+
+.cognot-property-vector-value input {
+  flex: 1;
+  padding: 6px 8px;
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 12px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.cognot-property-vector-value input:focus {
+  border-color: #2196F3;
+}

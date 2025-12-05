@@ -1,0 +1,172 @@
+.cognot-flow-editor {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  background-color: #1e1e1e;
+}
+
+.cognot-execution-progress {
+  background-color: #2a2a2a;
+  padding: 8px 12px;
+  border-bottom: 1px solid #444;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cognot-progress-bar-container {
+  height: 4px;
+  background-color: #3a3a3a;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.cognot-progress-bar {
+  height: 100%;
+  background-color: #4ade80;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.cognot-progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #ccc;
+}
+
+.cognot-status-text {
+  font-weight: 500;
+}
+
+.cognot-progress-percentage {
+  color: #4ade80;
+}
+
+.cognot-cancel-button {
+  padding: 2px 8px;
+  background-color: #ef4444;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cognot-cancel-button:hover {
+  background-color: #dc2626;
+}
+
+.cognot-flow-main {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.cognot-flow-sidebar {
+  width: 300px;
+  background-color: #2a2a2a;
+  border-left: 1px solid #444;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.cognot-node-palette {
+  background-color: #2a2a2a;
+  border-bottom: 1px solid #444;
+  padding: 10px;
+}
+
+.cognot-palette-header {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.cognot-palette-categories {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.cognot-palette-category {
+  padding: 4px 12px;
+  background-color: #3a3a3a;
+  border-radius: 4px;
+  color: #ddd;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cognot-palette-category:hover {
+  background-color: #4a4a4a;
+}
+
+.cognot-palette-category.active {
+  background-color: #0080ff;
+  color: white;
+}
+
+.cognot-palette-nodes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 8px;
+}
+
+.cognot-palette-node {
+  padding: 8px;
+  background-color: #3a3a3a;
+  border-radius: 4px;
+  color: #ddd;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-left: 3px solid #555;
+}
+
+.cognot-palette-node:hover {
+  background-color: #4a4a4a;
+  border-left-color: #0080ff;
+  transform: translateY(-2px);
+}
+
+.cognot-palette-node.dragging {
+  opacity: 0.5;
+}
+
+.cognot-execution-controls {
+  padding: 12px;
+  border-top: 1px solid #444;
+  margin-top: auto;
+}
+
+.cognot-execute-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4ade80;
+  border: none;
+  border-radius: 4px;
+  color: #1e1e1e;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cognot-execute-button:hover:not(:disabled) {
+  background-color: #22c55e;
+  transform: translateY(-1px);
+}
+
+.cognot-execute-button:disabled {
+  background-color: #444;
+  color: #888;
+  cursor: not-allowed;
+}

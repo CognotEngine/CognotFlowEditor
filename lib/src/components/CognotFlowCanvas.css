@@ -1,0 +1,45 @@
+.cognot-flow-canvas {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  background-image: 
+    radial-gradient(circle, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-position: 0 0, 25px 25px, 0 0, 0 0;
+  cursor: grab;
+  user-select: none;
+  z-index: 1;
+}
+
+.cognot-flow-canvas:active {
+  cursor: grabbing;
+}
+
+.cognot-flow-transform-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0 0;
+  will-change: transform;
+  backface-visibility: hidden;
+  z-index: 2;
+}
+
+.cognot-flow-transform-layer {
+  transition: transform 0.05s ease-out;
+}
+
+.cognot-node {
+  transform-origin: 0 0;
+  backface-visibility: hidden;
+}
+
+.cognot-node, .cognot-edge {
+  will-change: transform;
+}

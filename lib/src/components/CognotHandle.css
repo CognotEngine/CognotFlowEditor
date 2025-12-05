@@ -1,0 +1,94 @@
+.cognot-handle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #333;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  z-index: 15;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.cognot-handle:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+.cognot-handle:active {
+  transform: scale(1.3);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4);
+}
+
+.cognot-handle-input {
+  left: -6px; 
+  margin-top: -6px; 
+  border-color: #444;
+}
+
+.cognot-handle-output {
+  right: -6px; 
+  margin-top: -6px; 
+  border-color: #444;
+}
+
+.cognot-handle-label {
+  position: absolute;
+  font-size: 11px;
+  color: #ccc;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 2px 6px;
+  border-radius: 3px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 20;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cognot-handle:hover .cognot-handle-label {
+  opacity: 1;
+}
+
+.cognot-handle-label-input {
+  right: 100%;
+  margin-right: 8px;
+  text-align: right;
+}
+
+.cognot-handle-label-output {
+  left: 100%;
+  margin-left: 8px;
+  text-align: left;
+}
+
+.cognot-handle-active {
+  transform: scale(1.4);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+.cognot-handle-connecting {
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.6);
+  animation: pulse 1s infinite;
+}
+
+.cognot-handle-connected {
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.8);
+  transform: scale(1.1);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgba(33, 150, 243, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.6);
+  }
+}
