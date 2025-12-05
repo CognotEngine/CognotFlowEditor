@@ -426,8 +426,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-- Project Link: [https://github.com/yourusername/cognot-flow-editor](https://github.com/yourusername/cognot-flow-editor)
-- Issue Tracker: [https://github.com/yourusername/cognot-flow-editor/issues](https://github.com/yourusername/cognot-flow-editor/issues)
+- Project Link:https://github.com/YourUsername/CognotFlowEditor.git
+- Issue Tracker: https://github.com/YourUsername/CognotFlowEditor/issuer
 - Email: your.email@example.com
 
 ## 🙏 Acknowledgments
@@ -439,3 +439,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 If you find this project useful, please give it a ⭐️!
+
