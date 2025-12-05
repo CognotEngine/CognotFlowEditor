@@ -1,7 +1,6 @@
 # CognotFlowEditor
 
-
-!([assets/screenshot.png](https://github.com/CognotEngine/CognotFlowEditor/blob/main/example/img.png?raw=true))
+![工作流编辑器截图](example/img.png)
 
 A powerful, React-based visual workflow editor that supports node connections, workflow execution, and real-time state management.
 
@@ -440,6 +439,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 Welcome to submit bugs and suggestions on GitHub!
 
 If you find this project useful, please give it a ⭐️!
+
 
 
 
