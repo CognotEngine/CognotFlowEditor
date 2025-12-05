@@ -426,17 +426,16 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-- Project Link:https://github.com/YourUsername/CognotFlowEditor.git
-- Issue Tracker: https://github.com/YourUsername/CognotFlowEditor/issuer
-- Email: your.email@example.com
+- Project Link:https://github.com/CognotEngine/CognotFlowEditor
+- Issue Tracker: https://github.com/CognotEngine/CognotFlowEditor
+- Email: aomozx88@gmail.com
 
 ## 🙏 Acknowledgments
 
-- Thanks to [React](https://reactjs.org/) for the excellent framework
-- Inspiration from [ReactFlow](https://reactflow.dev/) and other visual editing tools
 - Thanks to all contributors for their support and help
 
----
+Welcome to submit bugs and suggestions on GitHub!
 
 If you find this project useful, please give it a ⭐️!
+
 
