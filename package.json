@@ -37,7 +37,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/CognotEngine/cognot-flow-editor.git"
+    "url": "https://github.com/CognotEngine/CognotFlowEditor.git"
   },
-  "homepage": "https://github.com/CognotEngine/cognot-flow-editor#readme"
+  "homepage": "https://github.com/CognotEngine/CognotFlowEditor#readme"
 }
