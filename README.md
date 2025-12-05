@@ -1,75 +1,65 @@
-# CognotFlowEditor
-
-一个强大的、基于React的可视化工作流编辑器，支持节点连接、工作流执行和实时状态管理。
-
-## 🚀 特性
-
-- ✨ **可视化编辑**：直观的拖拽式工作流编辑界面
-- 🔗 **节点连接**：支持多种节点类型和连接方式
-- 🎯 **实时预览**：工作流执行过程的实时可视化反馈
-- 🎨 **主题定制**：支持自定义样式和主题
-- 📱 **响应式设计**：适配不同屏幕尺寸
-- 📦 **易于集成**：简单的API，快速集成到现有项目
-- 🔧 **高度可扩展**：支持自定义节点、连线和功能扩展
-
-## 📦 安装
-
-使用npm安装：
-
-```bash
+CognotFlowEditor
+A powerful React-based visual workflow editor that supports node connection, workflow execution, and real-time state management.
+🚀 Features
+✨ Visual Editing: Intuitive drag-and-drop workflow editing interface
+🔗 Node Connection: Support for multiple node types and connection methods
+🎯 Real-time Preview: Real-time visual feedback of workflow execution process
+🎨 Theme Customization: Support for custom styles and themes
+📱 Responsive Design: Adapts to different screen sizes
+📦 Easy Integration: Simple API for quick integration into existing projects
+🔧 Highly Extensible: Support for custom nodes, edges, and feature extensions
+📦 Installation
+Install with npm:
+bash
+运行
 npm install cognot-flow-editor
-```
-
-使用yarn安装：
-
-```bash
+Install with yarn:
+bash
+运行
 yarn add cognot-flow-editor
-```
-
-## 🚀 快速开始
-
-### 基本使用
-
-```javascript
+🚀 Quick Start
+Basic Usage
+javascript
+运行
 import React, { useState } from 'react'
 import { CognotFlowEditor } from 'cognot-flow-editor'
 import 'cognot-flow-editor/dist/style.css'
 
 const App = () => {
-  // 初始化工作流数据
+  // Initialize workflow data
   const [workflow, setWorkflow] = useState({
     nodes: [
       {
         id: 'node-1',
         type: 'input',
         position: { x: 100, y: 100 },
-        data: { label: '输入节点' }
+        data: { label: 'Input Node' }
       },
       {
         id: 'node-2',
         type: 'output',
         position: { x: 400, y: 100 },
-        data: { label: '输出节点' }
+        data: { label: 'Output Node' }
       }
     ],
     edges: []
   })
 
-  // 处理工作流变化
+  // Handle workflow changes
   const handleWorkflowChange = (newWorkflow) => {
     setWorkflow(newWorkflow)
   }
 
-  // 处理工作流执行
+  // Handle workflow execution
   const handleExecute = () => {
-    console.log('执行工作流:', workflow)
-    // 在这里实现工作流执行逻辑
+    console.log('Execute Workflow:', workflow)
+    // Implement workflow execution logic here
   }
 
-  // 处理工作流取消
+  // Handle workflow cancellation
   const handleCancel = () => {
-    console.log('取消执行')
-    // 在这里实现工作流取消逻辑
+    console.log('Cancel Execution')
+    // Implement workflow cancellation logic here
   }
 
   return (
@@ -85,16 +75,14 @@ const App = () => {
 }
 
 export default App
-```
-
-### 高级使用
-
-```javascript
+Advanced Usage
+javascript
+运行
 import React, { useState } from 'react'
 import { CognotFlowProvider, CognotFlowCanvas, useCognotFlow } from 'cognot-flow-editor'
 import 'cognot-flow-editor/dist/style.css'
 
-// 自定义工具栏组件
+// Custom toolbar component
 const CustomToolbar = () => {
   const { executeWorkflow, cancelExecution, isExecuting } = useCognotFlow()
 
@@ -105,28 +93,28 @@ const CustomToolbar = () => {
         disabled={isExecuting}
         className={isExecuting ? 'executing' : ''}
       >
-        {isExecuting ? '执行中...' : '执行工作流'}
+        {isExecuting ? 'Executing...' : 'Execute Workflow'}
       </button>
       <button 
         onClick={cancelExecution} 
         disabled={!isExecuting}
       >
-        取消执行
+        Cancel Execution
       </button>
     </div>
   )
 }
 
-// 自定义节点点击处理
+// Custom node click handler
 const handleNodeClick = (event, node) => {
-  console.log('节点被点击:', node)
-  // 在这里实现节点点击逻辑
+  console.log('Node Clicked:', node)
+  // Implement node click logic here
 }
 
-// 自定义连线点击处理
+// Custom edge click handler
 const handleEdgeClick = (event, edge) => {
-  console.log('连线被点击:', edge)
-  // 在这里实现连线点击逻辑
+  console.log('Edge Clicked:', edge)
+  // Implement edge click logic here
 }
 
 const App = () => {
@@ -142,10 +130,10 @@ const App = () => {
   return (
     <div style={{ width: '100vw', height: '100vh', display: 'flex', flexDirection: 'column' }}>
       <CognotFlowProvider workflow={workflow} onChange={handleWorkflowChange}>
-        {/* 自定义工具栏 */}
+        {/* Custom toolbar */}
         <CustomToolbar />
         
-        {/* 仅使用画布组件 */}
+        {/* Canvas component only */}
         <div style={{ flex: 1 }}>
           <CognotFlowCanvas 
             onNodeClick={handleNodeClick}
@@ -158,51 +146,35 @@ const App = () => {
 }
 
 export default App
-```
-
-## 📖 API文档
-
-### CognotFlowEditor
-
-主要的工作流编辑器组件，包含工具栏和画布。
-
-| 属性 | 类型 | 默认值 | 描述 |
-|------|------|--------|------|
-| `workflow` | `object` | - | 工作流数据，包含nodes和edges数组 |
-| `onChange` | `function` | - | 工作流变化时的回调函数 |
-| `onExecute` | `function` | - | 执行按钮点击时的回调函数 |
-| `onCancel` | `function` | - | 取消按钮点击时的回调函数 |
-| `onNodeClick` | `function` | - | 节点点击时的回调函数 |
-| `onEdgeClick` | `function` | - | 连线点击时的回调函数 |
-| `className` | `string` | - | 自定义CSS类名 |
-| `style` | `object` | - | 自定义内联样式 |
-
-### CognotFlowCanvas
-
-工作流画布组件，用于显示和编辑工作流。
-
-| 属性 | 类型 | 默认值 | 描述 |
-|------|------|--------|------|
-| `onNodeClick` | `function` | - | 节点点击时的回调函数 |
-| `onEdgeClick` | `function` | - | 连线点击时的回调函数 |
-| `className` | `string` | - | 自定义CSS类名 |
-| `style` | `object` | - | 自定义内联样式 |
-
-### CognotFlowProvider
-
-工作流上下文提供者，用于管理工作流状态。
-
-| 属性 | 类型 | 默认值 | 描述 |
-|------|------|--------|------|
-| `workflow` | `object` | - | 工作流数据，包含nodes和edges数组 |
-| `onChange` | `function` | - | 工作流变化时的回调函数 |
-| `children` | `node` | - | 子组件 |
-
-### useCognotFlow
-
-自定义钩子，用于访问工作流上下文。
-
-```javascript
+📖 API Documentation
+CognotFlowEditor
+The main workflow editor component, including toolbar and canvas.
+Prop	Type	Default	Description
+workflow	object	-	Workflow data, including nodes and edges arrays
+onChange	function	-	Callback function triggered when workflow changes
+onExecute	function	-	Callback function triggered when execute button is clicked
+onCancel	function	-	Callback function triggered when cancel button is clicked
+onNodeClick	function	-	Callback function triggered when node is clicked
+onEdgeClick	function	-	Callback function triggered when edge is clicked
+className	string	-	Custom CSS class name
+style	object	-	Custom inline style
+CognotFlowCanvas
+Workflow canvas component for displaying and editing workflows.
+Prop	Type	Default	Description
+onNodeClick	function	-	Callback function triggered when node is clicked
+onEdgeClick	function	-	Callback function triggered when edge is clicked
+className	string	-	Custom CSS class name
+style	object	-	Custom inline style
+CognotFlowProvider
+Workflow context provider for managing workflow state.
+Prop	Type	Default	Description
+workflow	object	-	Workflow data, including nodes and edges arrays
+onChange	function	-	Callback function triggered when workflow changes
+children	node	-	Child components
+useCognotFlow
+Custom hook for accessing workflow context.
+javascript
+运行
 const {
   workflow,
   setWorkflow,
@@ -217,17 +189,14 @@ const {
   executeWorkflow,
   cancelExecution
 } = useCognotFlow()
-```
-
-## 🎨 自定义节点和连线
-
-### 自定义节点
-
-```javascript
+🎨 Custom Nodes & Edges
+Custom Nodes
+javascript
+运行
 import React from 'react'
 import { CognotFlowEditor } from 'cognot-flow-editor'
 
-// 自定义节点组件
+// Custom node component
 const CustomNode = ({ id, data, position, onConnect }) => {
   return (
     <div 
@@ -265,33 +234,31 @@ const CustomNode = ({ id, data, position, onConnect }) => {
   )
 }
 
-// 使用自定义节点
+// Use custom node
 const App = () => {
-  // ... 状态管理代码
+  // ... state management code
 
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
       <CognotFlowEditor 
         workflow={workflow}
         onChange={handleWorkflowChange}
-        nodeTypes={{ custom: CustomNode }} // 注册自定义节点
+        nodeTypes={{ custom: CustomNode }} // Register custom node
       />
     </div>
   )
 }
-```
-
-### 自定义连线
-
-```javascript
+Custom Edges
+javascript
+运行
 import React from 'react'
 import { CognotFlowEditor } from 'cognot-flow-editor'
 
-// 自定义连线组件
+// Custom edge component
 const CustomEdge = ({ id, source, target, sourcePosition, targetPosition, style }) => {
-  // 计算连线路径
+  // Calculate edge path
   const getPath = () => {
-    // 实现自定义路径计算逻辑
+    // Implement custom path calculation logic
   }
 
   return (
@@ -308,70 +275,60 @@ const CustomEdge = ({ id, source, target, sourcePosition, targetPosition, style 
   )
 }
 
-// 使用自定义连线
+// Use custom edge
 const App = () => {
-  // ... 状态管理代码
+  // ... state management code
 
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
       <CognotFlowEditor 
         workflow={workflow}
         onChange={handleWorkflowChange}
-        edgeTypes={{ custom: CustomEdge }} // 注册自定义连线
+        edgeTypes={{ custom: CustomEdge }} // Register custom edge
       />
     </div>
   )
 }
-```
-
-## 🎯 事件处理
-
-### 节点事件
-
-```javascript
+🎯 Event Handling
+Node Events
+javascript
+运行
 const handleNodeClick = (event, node) => {
-  console.log('节点被点击:', node)
-  // 实现节点点击逻辑
+  console.log('Node Clicked:', node)
+  // Implement node click logic
 }
 
 const handleNodeDragStart = (event, node) => {
-  console.log('节点开始拖拽:', node)
-  // 实现节点拖拽开始逻辑
+  console.log('Node Drag Started:', node)
+  // Implement node drag start logic
 }
 
 const handleNodeDragEnd = (event, node) => {
-  console.log('节点拖拽结束:', node)
-  // 实现节点拖拽结束逻辑
+  console.log('Node Drag Ended:', node)
+  // Implement node drag end logic
 }
-```
-
-### 连线事件
-
-```javascript
+Edge Events
+javascript
+运行
 const handleEdgeClick = (event, edge) => {
-  console.log('连线被点击:', edge)
-  // 实现连线点击逻辑
+  console.log('Edge Clicked:', edge)
+  // Implement edge click logic
 }
 
 const handleConnectionStart = (event, connection) => {
-  console.log('连接开始:', connection)
-  // 实现连接开始逻辑
+  console.log('Connection Started:', connection)
+  // Implement connection start logic
 }
 
 const handleConnectionEnd = (event, connection) => {
-  console.log('连接结束:', connection)
-  // 实现连接结束逻辑
+  console.log('Connection Ended:', connection)
+  // Implement connection end logic
 }
-```
-
-## 🎨 主题定制
-
-### CSS变量
-
-通过覆盖CSS变量来自定义主题：
-
-```css
-/* 自定义主题 */
+🎨 Theme Customization
+CSS Variables
+Customize theme by overriding CSS variables:
+css
+/* Custom theme */
 :root {
   --cognot-node-bg-color: #2196F3;
   --cognot-node-text-color: white;
@@ -383,59 +340,42 @@ const handleConnectionEnd = (event, connection) => {
   --cognot-toolbar-bg-color: #FFFFFF;
   --cognot-toolbar-text-color: #333333;
 }
-```
-
-### 自定义CSS类
-
-通过自定义CSS类来覆盖默认样式：
-
-```css
-/* 自定义节点样式 */
+Custom CSS Classes
+Override default styles with custom CSS classes:
+css
+/* Custom node style */
 .cognot-node {
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* 自定义连线样式 */
+/* Custom edge style */
 .cognot-edge-path {
   stroke-dasharray: 5, 5;
   stroke-linecap: round;
 }
 
-/* 自定义工具栏样式 */
+/* Custom toolbar style */
 .cognot-flow-editor-toolbar {
   background-color: #212121;
   color: white;
   padding: 12px;
 }
-```
-
-## 🤝 贡献
-
-欢迎贡献代码！请遵循以下步骤：
-
-1. Fork 项目
-2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 打开 Pull Request
-
-## 📝 许可证
-
-本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
-
-## 📞 联系方式
-
-- 项目链接：[https://github.com/yourusername/cognot-flow-editor](https://github.com/yourusername/cognot-flow-editor)
-- 问题反馈：[https://github.com/yourusername/cognot-flow-editor/issues](https://github.com/yourusername/cognot-flow-editor/issues)
-- 电子邮件：your.email@example.com
-
-## 🙏 致谢
-
-- 感谢 [React](https://reactjs.org/) 提供的优秀框架
-- 灵感来自 [ReactFlow](https://reactflow.dev/) 和其他可视化编辑工具
-- 感谢所有贡献者的支持和帮助
-
----
-
-如果您觉得这个项目有用，请给它一个 ⭐️！
+🤝 Contributing
+Contributions are welcome! Follow these steps:
+Fork the project
+Create your feature branch (git checkout -b feature/AmazingFeature)
+Commit your changes (git commit -m 'Add some AmazingFeature')
+Push to the branch (git push origin feature/AmazingFeature)
+Open a Pull Request
+📝 License
+This project is licensed under the MIT License - see the LICENSE file for details.
+📞 Contact
+Project Link: https://github.com/CognotEngine/CognotFlowEditor
+Issue Reporting: https://github.com/CognotEngine/CognotFlowEditor/issues
+Email: your.aomozx88#gmail.com
+🙏 Acknowledgements
+Thanks to React for the excellent framework
+Inspired by ReactFlow and other visual editing tools
+Grateful for the support and help from all contributors
+If you find this project useful, please give it a ⭐️!
