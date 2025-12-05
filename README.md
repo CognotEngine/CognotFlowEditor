@@ -1,26 +1,36 @@
-CognotFlowEditor
-A powerful React-based visual workflow editor that supports node connection, workflow execution, and real-time state management.
-🚀 Features
-✨ Visual Editing: Intuitive drag-and-drop workflow editing interface
-🔗 Node Connection: Support for multiple node types and connection methods
-🎯 Real-time Preview: Real-time visual feedback of workflow execution process
-🎨 Theme Customization: Support for custom styles and themes
-📱 Responsive Design: Adapts to different screen sizes
-📦 Easy Integration: Simple API for quick integration into existing projects
-🔧 Highly Extensible: Support for custom nodes, edges, and feature extensions
-📦 Installation
+# CognotFlowEditor
+
+A powerful, React-based visual workflow editor that supports node connections, workflow execution, and real-time state management.
+
+## 🚀 Features
+
+- ✨ **Visual Editing**: Intuitive drag-and-drop workflow editing interface
+- 🔗 **Node Connections**: Support for multiple node types and connection methods
+- 🎯 **Real-time Preview**: Real-time visual feedback during workflow execution
+- 🎨 **Theme Customization**: Support for custom styles and themes
+- 📱 **Responsive Design**: Adapt to different screen sizes
+- 📦 **Easy Integration**: Simple API for quick integration into existing projects
+- 🔧 **Highly Extensible**: Support for custom nodes, edges, and functionality extensions
+
+## 📦 Installation
+
 Install with npm:
-bash
-运行
+
+```bash
 npm install cognot-flow-editor
+```
+
 Install with yarn:
-bash
-运行
+
+```bash
 yarn add cognot-flow-editor
-🚀 Quick Start
-Basic Usage
-javascript
-运行
+```
+
+## 🚀 Quick Start
+
+### Basic Usage
+
+```javascript
 import React, { useState } from 'react'
 import { CognotFlowEditor } from 'cognot-flow-editor'
 import 'cognot-flow-editor/dist/style.css'
@@ -52,13 +62,13 @@ const App = () => {
 
   // Handle workflow execution
   const handleExecute = () => {
-    console.log('Execute Workflow:', workflow)
+    console.log('Execute workflow:', workflow)
     // Implement workflow execution logic here
   }
 
   // Handle workflow cancellation
   const handleCancel = () => {
-    console.log('Cancel Execution')
+    console.log('Cancel execution')
     // Implement workflow cancellation logic here
   }
 
@@ -75,9 +85,11 @@ const App = () => {
 }
 
 export default App
-Advanced Usage
-javascript
-运行
+```
+
+### Advanced Usage
+
+```javascript
 import React, { useState } from 'react'
 import { CognotFlowProvider, CognotFlowCanvas, useCognotFlow } from 'cognot-flow-editor'
 import 'cognot-flow-editor/dist/style.css'
@@ -107,13 +119,13 @@ const CustomToolbar = () => {
 
 // Custom node click handler
 const handleNodeClick = (event, node) => {
-  console.log('Node Clicked:', node)
+  console.log('Node clicked:', node)
   // Implement node click logic here
 }
 
 // Custom edge click handler
 const handleEdgeClick = (event, edge) => {
-  console.log('Edge Clicked:', edge)
+  console.log('Edge clicked:', edge)
   // Implement edge click logic here
 }
 
@@ -146,35 +158,51 @@ const App = () => {
 }
 
 export default App
-📖 API Documentation
-CognotFlowEditor
+```
+
+## 📖 API Documentation
+
+### CognotFlowEditor
+
 The main workflow editor component, including toolbar and canvas.
-Prop	Type	Default	Description
-workflow	object	-	Workflow data, including nodes and edges arrays
-onChange	function	-	Callback function triggered when workflow changes
-onExecute	function	-	Callback function triggered when execute button is clicked
-onCancel	function	-	Callback function triggered when cancel button is clicked
-onNodeClick	function	-	Callback function triggered when node is clicked
-onEdgeClick	function	-	Callback function triggered when edge is clicked
-className	string	-	Custom CSS class name
-style	object	-	Custom inline style
-CognotFlowCanvas
-Workflow canvas component for displaying and editing workflows.
-Prop	Type	Default	Description
-onNodeClick	function	-	Callback function triggered when node is clicked
-onEdgeClick	function	-	Callback function triggered when edge is clicked
-className	string	-	Custom CSS class name
-style	object	-	Custom inline style
-CognotFlowProvider
+
+| Property | Type | Default | Description |
+|----------|------|--------|-------------|
+| `workflow` | `object` | - | Workflow data, including nodes and edges arrays |
+| `onChange` | `function` | - | Callback function when workflow changes |
+| `onExecute` | `function` | - | Callback function when execute button is clicked |
+| `onCancel` | `function` | - | Callback function when cancel button is clicked |
+| `onNodeClick` | `function` | - | Callback function when node is clicked |
+| `onEdgeClick` | `function` | - | Callback function when edge is clicked |
+| `className` | `string` | - | Custom CSS class name |
+| `style` | `object` | - | Custom inline style |
+
+### CognotFlowCanvas
+
+The workflow canvas component for displaying and editing workflows.
+
+| Property | Type | Default | Description |
+|----------|------|--------|-------------|
+| `onNodeClick` | `function` | - | Callback function when node is clicked |
+| `onEdgeClick` | `function` | - | Callback function when edge is clicked |
+| `className` | `string` | - | Custom CSS class name |
+| `style` | `object` | - | Custom inline style |
+
+### CognotFlowProvider
+
 Workflow context provider for managing workflow state.
-Prop	Type	Default	Description
-workflow	object	-	Workflow data, including nodes and edges arrays
-onChange	function	-	Callback function triggered when workflow changes
-children	node	-	Child components
-useCognotFlow
+
+| Property | Type | Default | Description |
+|----------|------|--------|-------------|
+| `workflow` | `object` | - | Workflow data, including nodes and edges arrays |
+| `onChange` | `function` | - | Callback function when workflow changes |
+| `children` | `node` | - | Child components |
+
+### useCognotFlow
+
 Custom hook for accessing workflow context.
-javascript
-运行
+
+```javascript
 const {
   workflow,
   setWorkflow,
@@ -189,10 +217,13 @@ const {
   executeWorkflow,
   cancelExecution
 } = useCognotFlow()
-🎨 Custom Nodes & Edges
-Custom Nodes
-javascript
-运行
+```
+
+## 🎨 Custom Nodes and Edges
+
+### Custom Nodes
+
+```javascript
 import React from 'react'
 import { CognotFlowEditor } from 'cognot-flow-editor'
 
@@ -234,7 +265,7 @@ const CustomNode = ({ id, data, position, onConnect }) => {
   )
 }
 
-// Use custom node
+// Using custom nodes
 const App = () => {
   // ... state management code
 
@@ -248,9 +279,11 @@ const App = () => {
     </div>
   )
 }
-Custom Edges
-javascript
-运行
+```
+
+### Custom Edges
+
+```javascript
 import React from 'react'
 import { CognotFlowEditor } from 'cognot-flow-editor'
 
@@ -275,7 +308,7 @@ const CustomEdge = ({ id, source, target, sourcePosition, targetPosition, style 
   )
 }
 
-// Use custom edge
+// Using custom edges
 const App = () => {
   // ... state management code
 
@@ -289,45 +322,55 @@ const App = () => {
     </div>
   )
 }
-🎯 Event Handling
-Node Events
-javascript
-运行
+```
+
+## 🎯 Event Handling
+
+### Node Events
+
+```javascript
 const handleNodeClick = (event, node) => {
-  console.log('Node Clicked:', node)
+  console.log('Node clicked:', node)
   // Implement node click logic
 }
 
 const handleNodeDragStart = (event, node) => {
-  console.log('Node Drag Started:', node)
+  console.log('Node drag started:', node)
   // Implement node drag start logic
 }
 
 const handleNodeDragEnd = (event, node) => {
-  console.log('Node Drag Ended:', node)
+  console.log('Node drag ended:', node)
   // Implement node drag end logic
 }
-Edge Events
-javascript
-运行
+```
+
+### Edge Events
+
+```javascript
 const handleEdgeClick = (event, edge) => {
-  console.log('Edge Clicked:', edge)
+  console.log('Edge clicked:', edge)
   // Implement edge click logic
 }
 
 const handleConnectionStart = (event, connection) => {
-  console.log('Connection Started:', connection)
+  console.log('Connection started:', connection)
   // Implement connection start logic
 }
 
 const handleConnectionEnd = (event, connection) => {
-  console.log('Connection Ended:', connection)
+  console.log('Connection ended:', connection)
   // Implement connection end logic
 }
-🎨 Theme Customization
-CSS Variables
-Customize theme by overriding CSS variables:
-css
+```
+
+## 🎨 Theme Customization
+
+### CSS Variables
+
+Customize the theme by overriding CSS variables:
+
+```css
 /* Custom theme */
 :root {
   --cognot-node-bg-color: #2196F3;
@@ -340,42 +383,59 @@ css
   --cognot-toolbar-bg-color: #FFFFFF;
   --cognot-toolbar-text-color: #333333;
 }
-Custom CSS Classes
+```
+
+### Custom CSS Classes
+
 Override default styles with custom CSS classes:
-css
-/* Custom node style */
+
+```css
+/* Custom node styles */
 .cognot-node {
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Custom edge style */
+/* Custom edge styles */
 .cognot-edge-path {
   stroke-dasharray: 5, 5;
   stroke-linecap: round;
 }
 
-/* Custom toolbar style */
+/* Custom toolbar styles */
 .cognot-flow-editor-toolbar {
   background-color: #212121;
   color: white;
   padding: 12px;
 }
-🤝 Contributing
-Contributions are welcome! Follow these steps:
-Fork the project
-Create your feature branch (git checkout -b feature/AmazingFeature)
-Commit your changes (git commit -m 'Add some AmazingFeature')
-Push to the branch (git push origin feature/AmazingFeature)
-Open a Pull Request
-📝 License
-This project is licensed under the MIT License - see the LICENSE file for details.
-📞 Contact
-Project Link: https://github.com/CognotEngine/CognotFlowEditor
-Issue Reporting: https://github.com/CognotEngine/CognotFlowEditor/issues
-Email: your.aomozx88#gmail.com
-🙏 Acknowledgements
-Thanks to React for the excellent framework
-Inspired by ReactFlow and other visual editing tools
-Grateful for the support and help from all contributors
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the project
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 📞 Contact
+
+- Project Link: [https://github.com/yourusername/cognot-flow-editor](https://github.com/yourusername/cognot-flow-editor)
+- Issue Tracker: [https://github.com/yourusername/cognot-flow-editor/issues](https://github.com/yourusername/cognot-flow-editor/issues)
+- Email: your.email@example.com
+
+## 🙏 Acknowledgments
+
+- Thanks to [React](https://reactjs.org/) for the excellent framework
+- Inspiration from [ReactFlow](https://reactflow.dev/) and other visual editing tools
+- Thanks to all contributors for their support and help
+
+---
+
 If you find this project useful, please give it a ⭐️!
